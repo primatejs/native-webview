@@ -1,5 +1,5 @@
 import { CString, FFIType, JSCallback } from "bun:ffi";
-import { encodeCString, instances, lib } from "./ffi";
+import { cstring, instances, lib } from "./ffi.js";
 
 export class Webview {
   #handle = null;
@@ -10,7 +10,7 @@ export class Webview {
   }
 
   set title(title) {
-    lib.symbols.webview_set_title(this.#handle, encodeCString(title));
+    lib.symbols.webview_set_title(this.#handle, cstring(title));
   }
 
   constructor(
@@ -37,11 +37,11 @@ export class Webview {
   }
 
   navigate(url) {
-    lib.symbols.webview_navigate(this.#handle, encodeCString(url));
+    lib.symbols.webview_navigate(this.#handle, cstring(url));
   }
 
   setHTML(html) {
-    lib.symbols.webview_set_html(this.#handle, encodeCString(html));
+    lib.symbols.webview_set_html(this.#handle, cstring(html));
   }
 
   run() {
@@ -61,7 +61,7 @@ export class Webview {
     this.#callbacks.set(name, callbackResource);
     lib.symbols.webview_bind(
       this.#handle,
-      encodeCString(name),
+      cstring(name),
       callbackResource.ptr,
       arg,
     );
@@ -90,7 +90,7 @@ export class Webview {
   }
 
   unbind(name) {
-    lib.symbols.webview_unbind(this.#handle, encodeCString(name));
+    lib.symbols.webview_unbind(this.#handle, cstring(name));
     this.#callbacks.get(name)?.close();
     this.#callbacks.delete(name);
   }
@@ -98,17 +98,17 @@ export class Webview {
   return(seq, status, result) {
     lib.symbols.webview_return(
       this.#handle,
-      encodeCString(seq),
+      cstring(seq),
       status,
-      encodeCString(result),
+      cstring(result),
     );
   }
 
   eval(source) {
-    lib.symbols.webview_eval(this.#handle, encodeCString(source));
+    lib.symbols.webview_eval(this.#handle, cstring(source));
   }
 
   init(source) {
-    lib.symbols.webview_init(this.#handle, encodeCString(source));
+    lib.symbols.webview_init(this.#handle, cstring(source));
   }
 }

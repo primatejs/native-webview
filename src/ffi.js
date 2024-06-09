@@ -1,9 +1,7 @@
 import { dlopen, FFIType, ptr } from "bun:ffi";
-import bin from "../build/libwebview.bin";
+import bin from "../build/libwebview.so";
 
-export const encodeCString = value =>
-  ptr(new TextEncoder().encode(`${value }\0`));
-
+export const cstring = value => ptr(new TextEncoder().encode(`${value }\0`));
 export const instances = [];
 
 /**

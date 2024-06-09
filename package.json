@@ -1,16 +1,16 @@
 {
-  "name": "native-webview",
+  "name": "webview-compat",
   "version": "0.1.0",
   "description": "Native webview bindings",
-  "bugs": "https://github.com/primatejs/native-webview/issues",
+  "bugs": "https://github.com/primatejs/webview-compat/issues",
   "license": "MIT",
   "files": [
     "src/**/*.js",
     "build/*"
   ],
-  "repository": "https://github.com/primatejs/native-webview",
+  "repository": "https://github.com/primatejs/webview-compat",
   "devDependencies": {
-    "@types/bun": "latest",
+    "@types/bun": "^1.1.3",
     "maximin": "^0.3.2"
   },
   "type": "module",
