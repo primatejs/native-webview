@@ -2,15 +2,19 @@
   "name": "native-webview",
   "version": "0.1.0",
   "description": "Native webview bindings",
-  "type": "module",
+  "bugs": "https://github.com/primatejs/native-webview/issues",
+  "license": "MIT",
+  "files": [
+    "src/**/*.js",
+    "build/*"
+  ],
   "scripts": {
     "build": "bun scripts/build.ts"
   },
   "repository": "https://github.com/primatejs/native-webview",
-  "license": "MIT",
-  "bugs": "https://github.com/primatejs/native-webview/issues",
   "devDependencies": {
     "@types/bun": "latest",
     "maximin": "^0.3.2"
-  }
+  },
+  "type": "module"
 }

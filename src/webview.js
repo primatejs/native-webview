@@ -5,14 +5,6 @@ export class Webview {
   #handle = null;
   #callbacks = new Map();
 
-  get unsafeHandle() {
-    return this.#handle;
-  }
-
-  get unsafeWindowHandle() {
-    return lib.symbols.webview_get_window(this.#handle);
-  }
-
   set size({ width, height, hint }) {
     lib.symbols.webview_set_size(this.#handle, width, height, hint);
   }
