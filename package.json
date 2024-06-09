@@ -1,33 +1,14 @@
 {
-  "name": "webview-bun",
-  "description": "Bun bindings for webview, a tiny library for creating web-based desktop GUIs.",
-  "version": "2.0.0",
+  "name": "native-webview",
+  "version": "0.1.0",
+  "description": "Native webview bindings",
   "type": "module",
-  "module": "src/index.ts",
-  "main": "src/index.ts",
-  "files": [
-    "src/",
-    "build/.gitkeep",
-    "scripts/download.ts"
-  ],
   "scripts": {
-    "build": "bun scripts/build.ts",
-    "postinstall": "bun scripts/download.ts"
+    "build": "bun scripts/build.ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tr1ckydev/webview-bun.git"
-  },
-  "keywords": [
-    "bun",
-    "webview"
-  ],
-  "author": "tr1ckydev",
+  "repository": "https://github.com/primatejs/native-webview",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/tr1ckydev/webview-bun/issues"
-  },
-  "homepage": "https://github.com/tr1ckydev/webview-bun#readme",
+  "bugs": "https://github.com/primatejs/native-webview/issues",
   "devDependencies": {
     "@types/bun": "latest"
   }
