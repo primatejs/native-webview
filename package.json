@@ -8,13 +8,14 @@
     "src/**/*.js",
     "build/*"
   ],
-  "scripts": {
-    "build": "bun scripts/build.ts"
-  },
   "repository": "https://github.com/primatejs/native-webview",
   "devDependencies": {
     "@types/bun": "latest",
     "maximin": "^0.3.2"
   },
-  "type": "module"
+  "type": "module",
+  "exports": "./src/exports.js",
+  "scripts": {
+    "build": "bun scripts/build.ts"
+  }
 }
